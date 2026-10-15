@@ -1,0 +1,24 @@
+name: VM7 Skip Intermediate Personal CI 261016
+
+on:
+  pull_request:
+    branches:
+      - vm7-mq-protected-261016
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    name: VM7 Skip Intermediate Personal Gate 261016
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject an isolated break canary
+        shell: bash
+        run: |
+          if [[ -f vm7-skip-break-personal-261016.flag && ! -f vm7-skip-fix-personal-261016.flag ]]; then
+            echo "The break canary is present without its independent fix canary."
+            exit 1
+          fi
+          echo "The combined state is acceptable."
