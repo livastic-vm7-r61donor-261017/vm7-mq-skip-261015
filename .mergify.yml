@@ -1,3 +1,4 @@
+# Final owner-only fixture created after removing the attacker collaborator.
 merge_protections_settings:
   reporting_method: check-runs
   post_comment: true
