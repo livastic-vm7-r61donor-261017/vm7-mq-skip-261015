@@ -3,13 +3,13 @@ merge_protections_settings:
   post_comment: true
 
 merge_protections:
-  - name: Require Secondary Owner approval on allowed protected base
+  - name: Require Secondary Owner approval on equal-base allowed ref
     if:
-      - base = vm7-deploy-crossbase-allow-261016
+      - base = vm7-deploy-equal-allow-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
-  - name: Require Secondary Owner approval on sensitive protected base
+  - name: Require Secondary Owner approval on equal-base sensitive ref
     if:
-      - base = vm7-deploy-crossbase-sensitive-261016
+      - base = vm7-deploy-equal-sensitive-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
