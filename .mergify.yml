@@ -3,13 +3,13 @@ merge_protections_settings:
   post_comment: true
 
 merge_protections:
-  - name: Require Secondary Owner approval on equal-base allowed ref
+  - name: Require Secondary Owner approval on canonical allowed ref
     if:
-      - base = vm7-deploy-equal-allow-261016
+      - base = vm7-deploy-canon-allow-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
-  - name: Require Secondary Owner approval on equal-base sensitive ref
+  - name: Require Secondary Owner approval on canonical sensitive ref
     if:
-      - base = vm7-deploy-equal-sensitive-261016
+      - base = vm7-deploy-canon-sensitive-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
