@@ -1,4 +1,4 @@
-# Final owner-only fixture created after removing the attacker collaborator.
+# Owner-approved exact fixture for same-SHA cross-PR environment-boundary validation.
 merge_protections_settings:
   reporting_method: check-runs
   post_comment: true
@@ -17,5 +17,15 @@ merge_protections:
   - name: Require Secondary Owner approval on final sensitive ref
     if:
       - base = vm7-check-final-sensitive-261016
+    success_conditions:
+      - approved-reviews-by = onecursor13-vm7-secondary-20261013
+  - name: Require Secondary Owner approval on environment allowed ref
+    if:
+      - base = vm7-check-env-allow-261016
+    success_conditions:
+      - approved-reviews-by = onecursor13-vm7-secondary-20261013
+  - name: Require Secondary Owner approval on environment sensitive ref
+    if:
+      - base = vm7-check-env-sensitive-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
