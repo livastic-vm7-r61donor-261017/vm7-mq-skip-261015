@@ -1,20 +1,20 @@
 merge_protections_settings:
-  reporting_method: deployments
+  reporting_method: check-runs
   post_comment: true
 
 merge_protections:
-  - name: Require Secondary Owner approval on governed configuration branch
+  - name: Require Secondary Owner approval on check-run configuration branch
     if:
       - base = main
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
-  - name: Require Secondary Owner approval on governed allowed ref
+  - name: Require Secondary Owner approval on check-run allowed ref
     if:
-      - base = vm7-deploy-governed-allow-261016
+      - base = vm7-check-governed-allow-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
-  - name: Require Secondary Owner approval on governed sensitive ref
+  - name: Require Secondary Owner approval on check-run sensitive ref
     if:
-      - base = vm7-deploy-governed-sensitive-261016
+      - base = vm7-check-governed-sensitive-261016
     success_conditions:
       - approved-reviews-by = onecursor13-vm7-secondary-20261013
